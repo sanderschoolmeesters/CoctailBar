@@ -1,0 +1,20 @@
+<div class="container-fluid">
+    <div class="row justify-content-center text-center">
+        <div class="col">
+            <h1 style="font-size: 50pt;">Search Coctails</h1>
+            <hr>
+            <input class="input" #search><button ngbTooltip="Search Coctails" placement="right" (click)="searchCoctail(search.value)">Search</button>
+        </div>
+    </div>
+    <div style="margin-top: 50px;" class="row text-center justify-content-center">
+            <ngb-carousel style="width: 50%;">
+                <ng-template *ngFor="let coctail of coctails$ | async" ngbSlide>
+                    <h3 class="coctailTitle">{{coctail.strDrink}}</h3>
+                    <h4 class="coctailCategory">{{coctail.strCategory}}</h4>
+                  <div  class="picsum-img-wrapper">
+                    <img style="border-radius: 10px;" class="img-fluid" src='{{coctail.strDrinkThumb}}'>
+                  </div>
+                </ng-template>
+              </ngb-carousel>
+    </div>
+</div>

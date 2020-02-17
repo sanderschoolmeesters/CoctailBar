@@ -1,0 +1,46 @@
+<div class="container-fluid">
+  <div class="row justify-content-center text-center">
+    <div class="col">
+      <h1 style="font-size: 50pt;">Random Coctails</h1>
+      <hr>
+    </div>
+  </div>
+
+  <div *ngFor="let random of random$ | async" class="row justify-content-center text-center">
+    <div (click)="getDetails(random.idDrink)" style="border-right: 1px solid black;" class="col">
+      <h2>{{random.strDrink}}</h2>
+      <img style="width: 50%; border-radius: 10px;" class="img-fluid" src='{{random.strDrinkThumb}}'>
+    </div>
+    <div style="border-right: 1px solid black;" class="col">
+      <table class="table">
+        <thead>
+          <th>Category</th>
+          <th>Glass</th>
+        </thead>
+        <tbody>
+          <td>{{random.strCategory}}</td>
+          <td>{{random.strGlass}}</td>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div *ngFor="let random of random$ | async" class="row justify-content-center text-center">
+    <div (click)="getDetails(random.idDrink)" style="border-right: 1px solid black;" class="col">
+      <h2>{{random.strDrink}}</h2>
+      <img style="width: 50%; border-radius: 10px;" class="img-fluid" src='{{random.strDrinkThumb}}'>
+    </div>
+    <div style="border-right: 1px solid black;" class="col">
+      <table class="table">
+        <thead>
+          <th>Category</th>
+          <th>Glass</th>
+        </thead>
+        <tbody>
+          <td>{{random.strCategory}}</td>
+          <td>{{random.strGlass}}</td>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
